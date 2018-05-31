@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {ExperimentalForm} from "./component/experimental-form";
 import './App.css';
 import axios from "axios/index";
-import {Badge} from "react-bootstrap";
+import {Label} from "react-bootstrap";
 
 class App extends Component {
   constructor(props) {
@@ -19,9 +19,9 @@ class App extends Component {
       <div className="App">
         <div>어서 오세요 종선의 세상에</div>
           <ExperimentalForm onFormSubmit={this.onFormSubmit}></ExperimentalForm>
-          <div>
-              N (u r looking for): <Badge>{this.state.foundN}</Badge>
-          </div>
+          <h1>
+              N (u r looking for): <Label>{this.state.foundN}</Label>
+          </h1>
       </div>
     );
   }

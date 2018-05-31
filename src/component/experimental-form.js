@@ -79,8 +79,8 @@ export class ExperimentalForm extends Component {
                     <Col componentClass={ControlLabel} sm={2}>
                         Distribution
                     </Col>
-                    <Radio name="radioGroup" value="BETA_BINOMIAL">Beta Binomial</Radio>
-                    <Radio name="radioGroup" valie="UNIFORM">Uniform</Radio>
+                    <Radio name="radioGroup" value="BETA_BINOMIAL" inline>Beta Binomial</Radio>{ ' ' }
+                    <Radio name="radioGroup" valie="UNIFORM" inline>Uniform</Radio>
                 </FormGroup>
                 <Button onClick={this.onSubmit}>Submit</Button>
 
