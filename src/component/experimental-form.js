@@ -75,7 +75,7 @@ export class ExperimentalForm extends Component {
                         value={this.state.hyperParameterB}/>
                     </Col>
                 </FormGroup>
-                <FormGroup controlId="distribution" >
+                <FormGroup controlId="distribution" style={{textAlign: 'left'}}>
                     <Col componentClass={ControlLabel} sm={2}>
                         Distribution
                     </Col>

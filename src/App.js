@@ -10,7 +10,7 @@ class App extends Component {
 
     this.onFormSubmit = this.onFormSubmit.bind(this);
     this.state = {
-      foundN: ""
+      foundN: "0"
     }
   }
 
