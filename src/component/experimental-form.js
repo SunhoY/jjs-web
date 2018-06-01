@@ -30,7 +30,7 @@ export class ExperimentalForm extends Component {
                         Population
                     </Col>
                     <Col sm={5}>
-                        <FormControl type="string" placeholder="Enter Population" onChange={this.handleChange}/>
+                        <FormControl type="number" placeholder="Enter Population" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="reliability">
@@ -38,7 +38,7 @@ export class ExperimentalForm extends Component {
                         Reliability
                     </Col>
                     <Col sm={5}>
-                        <FormControl type="string" placeholder="Enter Reliability" onChange={this.handleChange}/>
+                        <FormControl type="number" placeholder="Enter Reliability" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="confidenceLevel">
@@ -46,7 +46,7 @@ export class ExperimentalForm extends Component {
                         Confidence Level
                     </Col>
                     <Col sm={5}>
-                        <FormControl type="string" placeholder="Enter Confidence Level" onChange={this.handleChange}/>
+                        <FormControl type="number" placeholder="Enter Confidence Level" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="defectiveItems">
@@ -54,7 +54,7 @@ export class ExperimentalForm extends Component {
                         Defective Items
                     </Col>
                     <Col sm={5}>
-                        <FormControl type="string" placeholder="Enter Defective Items" onChange={this.handleChange}/>
+                        <FormControl type="number" placeholder="Enter Defective Items" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="hyperParameterA">
@@ -62,7 +62,7 @@ export class ExperimentalForm extends Component {
                         Hyper Parameter A
                     </Col>
                     <Col sm={5}>
-                        <FormControl type="string" placeholder="Enter Hyper Parameter A" onChange={this.handleChange}
+                        <FormControl type="number" placeholder="Enter Hyper Parameter A" onChange={this.handleChange}
                             value={this.state.hyperParameterA} />
                     </Col>
                 </FormGroup>
@@ -71,7 +71,7 @@ export class ExperimentalForm extends Component {
                         Hyper Parameter B
                     </Col>
                     <Col sm={5}>
-                        <FormControl type="string" placeholder="Enter Hyper Parameter B" onChange={this.handleChange}
+                        <FormControl type="number" placeholder="Enter Hyper Parameter B" onChange={this.handleChange}
                         value={this.state.hyperParameterB}/>
                     </Col>
                 </FormGroup>

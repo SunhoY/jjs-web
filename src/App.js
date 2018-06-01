@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {ExperimentalForm} from "./component/experimental-form";
 import './App.css';
 import axios from "axios/index";
-import {Label} from "react-bootstrap";
+import {Label, PageHeader} from "react-bootstrap";
 
 class App extends Component {
   constructor(props) {
@@ -17,10 +17,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>어서 오세요 종선의 세상에</div>
+        <PageHeader>대한민국 No.1 Doctor 전종선 화이팅</PageHeader>
           <ExperimentalForm onFormSubmit={this.onFormSubmit}></ExperimentalForm>
           <h1>
-              N (u r looking for): <Label>{this.state.foundN}</Label>
+              n: <Label>{this.state.foundN}</Label>
           </h1>
       </div>
     );
