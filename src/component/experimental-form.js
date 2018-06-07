@@ -85,11 +85,11 @@ export class ExperimentalForm extends Component {
                     <Col componentClass={ControlLabel} sm={2}>
                         Distribution
                     </Col>
-                    <Col sm={2}>
+                    <Col sm={3}>
                         <Radio name="posteriorType" value="BETA_BINOMIAL" onChange={this.handleRadioChange} inline>Beta
                             Binomial</Radio>
                     </Col>
-                    <Col sm={2}>
+                    <Col sm={3}>
                         <Radio name="posteriorType" value="UNIFORM" onChange={this.handleRadioChange}
                                inline>Uniform</Radio>
                     </Col>
@@ -98,7 +98,7 @@ export class ExperimentalForm extends Component {
                     <Col componentClass={ControlLabel} sm={2}>
                         Maximum defects
                     </Col>
-                    <Col sm={1}>
+                    <Col sm={2}>
                         <Radio name="maximumDefectItem"
                                value={Math.floor(this.state.population * (1 - this.state.reliability))} onChange={e => {
                             this.handleRadioChange(e);
@@ -111,7 +111,7 @@ export class ExperimentalForm extends Component {
                                      disabled={true}
                                      inline="true"/>
                     </Col>
-                    <Col sm={1}>
+                    <Col sm={2}>
                         <Radio name="maximumDefectItem" value={this.state.maximumDefectItem} onChange={e => {
                             this.setState({isManual: false});
                         }} inline>Manual</Radio>
