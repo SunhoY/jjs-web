@@ -3,7 +3,7 @@ import {Button, Col, ControlLabel, Form, FormControl, FormGroup, Radio} from "re
 
 
 export class ExperimentalForm extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
 
         this.state = {
@@ -15,11 +15,17 @@ export class ExperimentalForm extends Component {
             hyperParameterB: 1,
             maximumDefectItem: "",
             posteriorType: 'BETA_BINOMIAL',
-            foundN: 10,
+            isManual: false
         };
 
         this.handleChange = this.handleChange.bind(this);
+        this.handleRadioChange = this.handleRadioChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+        this.onMaximumDefectChange = this.onMaximumDefectChange.bind(this);
+    }
+
+    onMaximumDefectChange(value) {
+        this.setState({maximumDefectItem: value});
     }
 
     render() {
@@ -63,7 +69,7 @@ export class ExperimentalForm extends Component {
                     </Col>
                     <Col sm={5}>
                         <FormControl type="number" placeholder="Enter Hyper Parameter A" onChange={this.handleChange}
-                            value={this.state.hyperParameterA} />
+                                     value={this.state.hyperParameterA}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="hyperParameterB">
@@ -72,20 +78,56 @@ export class ExperimentalForm extends Component {
                     </Col>
                     <Col sm={5}>
                         <FormControl type="number" placeholder="Enter Hyper Parameter B" onChange={this.handleChange}
-                        value={this.state.hyperParameterB}/>
+                                     value={this.state.hyperParameterB}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="distribution" style={{textAlign: 'left'}}>
                     <Col componentClass={ControlLabel} sm={2}>
                         Distribution
                     </Col>
-                    <Radio name="radioGroup" value="BETA_BINOMIAL" inline>Beta Binomial</Radio>{ ' ' }
-                    <Radio name="radioGroup" valie="UNIFORM" inline>Uniform</Radio>
+                    <Radio name="posteriorType" value="BETA_BINOMIAL" onChange={this.handleRadioChange} inline>Beta
+                        Binomial</Radio>{' '}
+                    <Radio name="posteriorType" value="UNIFORM" onChange={this.handleRadioChange} inline>Uniform</Radio>
+                </FormGroup>
+                <FormGroup controlId="maximumDefectItem" style={{textAlign: 'left'}}>
+                    <Col componentClass={ControlLabel} sm={2}>
+                        Maximum defects
+                    </Col>
+                    <Col sm={1}>
+                        <Radio name="maximumDefectItem"
+                               value={Math.floor(this.state.population * (1 - this.state.reliability))} onChange={e => {
+                            this.handleRadioChange(e);
+                            this.setState({isManual: true});
+                        }} inline>Default</Radio>
+                    </Col>
+                    <Col sm={2}>
+                        <FormControl type="number" value={Math.floor(this.state.population * (1 - this.state.reliability))} disabled={true}
+                               inline="true"/>
+                    </Col>
+                    <Col sm={1}>
+                        <Radio name="maximumDefectItem" value={this.state.maximumDefectItem} onChange={e => {
+                            this.setState({isManual: false});
+                        }} inline>Manual</Radio>
+                    </Col>
+                    <Col sm={2}>
+                        <FormControl type="number" disabled={this.state.isManual}
+                                     value={this.state.maximumDefectItem} onChange={this.handleChange}
+                                     inline="true"/>
+                    </Col>
                 </FormGroup>
                 <Button onClick={this.onSubmit}>Submit</Button>
 
             </Form>
         )
+    }
+
+    handleRadioChange(e) {
+        let {target: {name, value}} = e;
+
+        let state = {};
+        state[name] = value;
+
+        this.setState(state);
     }
 
     onSubmit(e) {

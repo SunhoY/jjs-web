@@ -17,7 +17,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PageHeader>노제목</PageHeader>
+        <PageHeader></PageHeader>
           <ExperimentalForm onFormSubmit={this.onFormSubmit}></ExperimentalForm>
           <h1>
               n: <Label>{this.state.foundN}</Label>
