@@ -103,7 +103,8 @@ export class ExperimentalForm extends Component {
                             this.setState({
                                 isManual: false,
                                 maximumDefectItem: Math.floor(this.state.population * (1 - this.state.reliability))
-                            });}
+                            });
+                        }
                         } inline>Default</Radio>
                     </Col>
                     <Col sm={2}>
@@ -113,7 +114,9 @@ export class ExperimentalForm extends Component {
                                      inline="true"/>
                     </Col>
                     <Col sm={2}>
-                        <Radio name="maximumDefectItem" onChange={e => {this.setState({isManual: true});}} inline>Manual</Radio>
+                        <Radio name="maximumDefectItem" onChange={e => {
+                            this.setState({isManual: true});
+                        }} inline>Manual</Radio>
                     </Col>
                     <Col sm={2}>
                         <FormControl type="number" disabled={!this.state.isManual}
@@ -151,10 +154,14 @@ export class ExperimentalForm extends Component {
         let state = {};
         state[key] = value;
 
-        if(!this.state.isManual) {
-            state['maximumDefectItem'] = Math.floor(this.state.population * (1 - this.state.reliability));
-        }
+        let me = this;
 
-        this.setState(state, () => console.log(this.state.maximumDefectItem, this.state.isManual));
+        this.setState(state, () => {
+            if (!me.state.isManual) {
+                me.setState({
+                    maximumDefectItem: Math.floor(this.state.population * (1 - this.state.reliability))
+                });
+            }
+        });
     }
 }
