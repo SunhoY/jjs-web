@@ -85,9 +85,14 @@ export class ExperimentalForm extends Component {
                     <Col componentClass={ControlLabel} sm={2}>
                         Distribution
                     </Col>
-                    <Radio name="posteriorType" value="BETA_BINOMIAL" onChange={this.handleRadioChange} inline>Beta
-                        Binomial</Radio>{' '}
-                    <Radio name="posteriorType" value="UNIFORM" onChange={this.handleRadioChange} inline>Uniform</Radio>
+                    <Col sm={2}>
+                        <Radio name="posteriorType" value="BETA_BINOMIAL" onChange={this.handleRadioChange} inline>Beta
+                            Binomial</Radio>
+                    </Col>
+                    <Col sm={2}>
+                        <Radio name="posteriorType" value="UNIFORM" onChange={this.handleRadioChange}
+                               inline>Uniform</Radio>
+                    </Col>
                 </FormGroup>
                 <FormGroup controlId="maximumDefectItem" style={{textAlign: 'left'}}>
                     <Col componentClass={ControlLabel} sm={2}>
@@ -101,8 +106,10 @@ export class ExperimentalForm extends Component {
                         }} inline>Default</Radio>
                     </Col>
                     <Col sm={2}>
-                        <FormControl type="number" value={Math.floor(this.state.population * (1 - this.state.reliability))} disabled={true}
-                               inline="true"/>
+                        <FormControl type="number"
+                                     value={Math.floor(this.state.population * (1 - this.state.reliability))}
+                                     disabled={true}
+                                     inline="true"/>
                     </Col>
                     <Col sm={1}>
                         <Radio name="maximumDefectItem" value={this.state.maximumDefectItem} onChange={e => {
