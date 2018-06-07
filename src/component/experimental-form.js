@@ -99,25 +99,24 @@ export class ExperimentalForm extends Component {
                         Maximum defects
                     </Col>
                     <Col sm={2}>
-                        <Radio name="maximumDefectItem"
-                               value={Math.floor(this.state.population * (1 - this.state.reliability))} onChange={e => {
-                            this.handleRadioChange(e);
-                            this.setState({isManual: true});
-                        }} inline>Default</Radio>
+                        <Radio name="maximumDefectItem" onChange={e => {
+                            this.setState({
+                                isManual: false,
+                                maximumDefectItem: Math.floor(this.state.population * (1 - this.state.reliability))
+                            });}
+                        } inline>Default</Radio>
                     </Col>
                     <Col sm={2}>
                         <FormControl type="number"
-                                     value={Math.floor(this.state.population * (1 - this.state.reliability))}
+                                     value={this.state.maximumDefectItem}
                                      disabled={true}
                                      inline="true"/>
                     </Col>
                     <Col sm={2}>
-                        <Radio name="maximumDefectItem" value={this.state.maximumDefectItem} onChange={e => {
-                            this.setState({isManual: false});
-                        }} inline>Manual</Radio>
+                        <Radio name="maximumDefectItem" onChange={e => {this.setState({isManual: true});}} inline>Manual</Radio>
                     </Col>
                     <Col sm={2}>
-                        <FormControl type="number" disabled={this.state.isManual}
+                        <FormControl type="number" disabled={!this.state.isManual}
                                      value={this.state.maximumDefectItem} onChange={this.handleChange}
                                      inline="true"/>
                     </Col>
@@ -147,9 +146,15 @@ export class ExperimentalForm extends Component {
         let key = e.target.id;
         let value = e.target.value;
 
+        console.log(key, value);
+
         let state = {};
         state[key] = value;
 
-        this.setState(state);
+        if(!this.state.isManual) {
+            state['maximumDefectItem'] = Math.floor(this.state.population * (1 - this.state.reliability));
+        }
+
+        this.setState(state, () => console.log(this.state.maximumDefectItem, this.state.isManual));
     }
 }
