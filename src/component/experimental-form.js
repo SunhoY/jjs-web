@@ -55,7 +55,7 @@ export class ExperimentalForm extends Component {
                         <FormControl type="number" placeholder="Enter Confidence Level" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
-                <FormGroup controlId="defectiveItems">
+                <FormGroup controlId="defectiveItem">
                     <Col componentClass={ControlLabel} sm={2}>
                         Defective Items
                     </Col>
