@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Button, Col, ControlLabel, Form, FormControl, FormGroup, Radio} from "react-bootstrap";
 
+const LABEL_COLUMN_SIZE = 3;
+const VALUE_COLUMN_SIZE = 5;
 
 export class ExperimentalForm extends Component {
     constructor(props) {
@@ -32,57 +34,57 @@ export class ExperimentalForm extends Component {
         return (
             <Form horizontal>
                 <FormGroup controlId="population">
-                    <Col componentClass={ControlLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={LABEL_COLUMN_SIZE}>
                         Population (N)
                     </Col>
-                    <Col sm={5}>
+                    <Col sm={VALUE_COLUMN_SIZE}>
                         <FormControl type="number" placeholder="Enter Population" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="reliability">
-                    <Col componentClass={ControlLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={LABEL_COLUMN_SIZE}>
                         Reliability (R)
                     </Col>
-                    <Col sm={5}>
+                    <Col sm={VALUE_COLUMN_SIZE}>
                         <FormControl type="number" placeholder="Enter Reliability" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="confidenceLevel">
-                    <Col componentClass={ControlLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={LABEL_COLUMN_SIZE}>
                         Confidence Level (CL)
                     </Col>
-                    <Col sm={5}>
+                    <Col sm={VALUE_COLUMN_SIZE}>
                         <FormControl type="number" placeholder="Enter Confidence Level" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="defectiveItem">
-                    <Col componentClass={ControlLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={LABEL_COLUMN_SIZE}>
                         Defective Items (k)
                     </Col>
-                    <Col sm={5}>
+                    <Col sm={VALUE_COLUMN_SIZE}>
                         <FormControl type="number" placeholder="Enter Defective Items" onChange={this.handleChange}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="hyperParameterA">
-                    <Col componentClass={ControlLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={LABEL_COLUMN_SIZE}>
                         Hyper Parameter A (a)
                     </Col>
-                    <Col sm={5}>
+                    <Col sm={VALUE_COLUMN_SIZE}>
                         <FormControl type="number" placeholder="Enter Hyper Parameter A" onChange={this.handleChange}
                                      value={this.state.hyperParameterA}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="hyperParameterB">
-                    <Col componentClass={ControlLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={LABEL_COLUMN_SIZE}>
                         Hyper Parameter B (b)
                     </Col>
-                    <Col sm={5}>
+                    <Col sm={VALUE_COLUMN_SIZE}>
                         <FormControl type="number" placeholder="Enter Hyper Parameter B" onChange={this.handleChange}
                                      value={this.state.hyperParameterB}/>
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="distribution" style={{textAlign: 'left'}}>
-                    <Col componentClass={ControlLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={LABEL_COLUMN_SIZE}>
                         Distribution (prior)
                     </Col>
                     <Col sm={3}>
@@ -95,7 +97,7 @@ export class ExperimentalForm extends Component {
                     </Col>
                 </FormGroup>
                 <FormGroup controlId="maximumDefectItem" style={{textAlign: 'left'}}>
-                    <Col componentClass={ControlLabel} sm={2}>
+                    <Col componentClass={ControlLabel} sm={LABEL_COLUMN_SIZE}>
                         Maximum defects (X0)
                     </Col>
                     <Col sm={2}>
