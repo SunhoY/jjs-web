@@ -33,7 +33,7 @@ export class ExperimentalForm extends Component {
             <Form horizontal>
                 <FormGroup controlId="population">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Population
+                        Population (N)
                     </Col>
                     <Col sm={5}>
                         <FormControl type="number" placeholder="Enter Population" onChange={this.handleChange}/>
@@ -41,7 +41,7 @@ export class ExperimentalForm extends Component {
                 </FormGroup>
                 <FormGroup controlId="reliability">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Reliability
+                        Reliability (R)
                     </Col>
                     <Col sm={5}>
                         <FormControl type="number" placeholder="Enter Reliability" onChange={this.handleChange}/>
@@ -49,7 +49,7 @@ export class ExperimentalForm extends Component {
                 </FormGroup>
                 <FormGroup controlId="confidenceLevel">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Confidence Level
+                        Confidence Level (CL)
                     </Col>
                     <Col sm={5}>
                         <FormControl type="number" placeholder="Enter Confidence Level" onChange={this.handleChange}/>
@@ -57,7 +57,7 @@ export class ExperimentalForm extends Component {
                 </FormGroup>
                 <FormGroup controlId="defectiveItem">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Defective Items
+                        Defective Items (k)
                     </Col>
                     <Col sm={5}>
                         <FormControl type="number" placeholder="Enter Defective Items" onChange={this.handleChange}/>
@@ -65,7 +65,7 @@ export class ExperimentalForm extends Component {
                 </FormGroup>
                 <FormGroup controlId="hyperParameterA">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Hyper Parameter A
+                        Hyper Parameter A (a)
                     </Col>
                     <Col sm={5}>
                         <FormControl type="number" placeholder="Enter Hyper Parameter A" onChange={this.handleChange}
@@ -74,7 +74,7 @@ export class ExperimentalForm extends Component {
                 </FormGroup>
                 <FormGroup controlId="hyperParameterB">
                     <Col componentClass={ControlLabel} sm={2}>
-                        Hyper Parameter B
+                        Hyper Parameter B (b)
                     </Col>
                     <Col sm={5}>
                         <FormControl type="number" placeholder="Enter Hyper Parameter B" onChange={this.handleChange}
@@ -83,7 +83,7 @@ export class ExperimentalForm extends Component {
                 </FormGroup>
                 <FormGroup controlId="distribution" style={{textAlign: 'left'}}>
                     <Col componentClass={ControlLabel} sm={2}>
-                        Distribution
+                        Distribution (prior)
                     </Col>
                     <Col sm={3}>
                         <Radio name="posteriorType" value="BETA_BINOMIAL" onChange={this.handleRadioChange} inline>Beta
@@ -96,7 +96,7 @@ export class ExperimentalForm extends Component {
                 </FormGroup>
                 <FormGroup controlId="maximumDefectItem" style={{textAlign: 'left'}}>
                     <Col componentClass={ControlLabel} sm={2}>
-                        Maximum defects
+                        Maximum defects (X0)
                     </Col>
                     <Col sm={2}>
                         <Radio name="maximumDefectItem" onChange={e => {
