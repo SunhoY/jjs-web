@@ -161,7 +161,7 @@ export class ExperimentalForm extends Component {
         this.setState(state, () => {
             if (!me.state.isManual) {
                 me.setState({
-                    maximumDefectItem: Math.floor(this.state.population * (1 - this.state.reliability))
+                    maximumDefectItem: Math.floor(this.state.population * Math.fround(1 - this.state.reliability))
                 });
             }
         });
